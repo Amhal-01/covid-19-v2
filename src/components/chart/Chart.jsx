@@ -9,7 +9,6 @@ const Chart = ({ data: { cases, recovered, deaths }, country }) => {
           labels: ["Infected", "Recovered", "Deaths"],
           datasets: [
             {
-              label: "People",
               backgroundColor: [
                 "rgba(0, 0, 255, 0.5)",
                 "rgba(0, 255, 0, 0.5)",
@@ -20,8 +19,8 @@ const Chart = ({ data: { cases, recovered, deaths }, country }) => {
           ],
         }}
         options={{
-          legend: { display: true },
-          title: { display: true, text: `Current state in ${country}` },
+          legend: { display: false },
+          title: { display: true, text: `Current state in ${country==="world"? "the " : ""}${String(country).charAt(0).toUpperCase() + String(country).slice(1)}` },
         }}
       />
     </div>
